@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConsultaCEP.Views.AboutPage"
+             xmlns:vm="clr-namespace:ConsultaCEP.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="pink" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="10,20,0,20" VerticalOptions="FillAndExpand">
+                    <Image Source="search.png" VerticalOptions="Center" HeightRequest="64" />
+                </ContentView>
+                <ContentView Padding="10,20,0,20" VerticalOptions="Center">
+                    <Label Text="Consulta CEP" FontSize="Title" TextColor="black"/>
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Label Text="O CEP será consultado no ViaCEP" FontSize="16" TextColor="black" HorizontalTextAlignment="Center"/>
+                <Entry x:Name="entry_cep" Keyboard="Numeric" MaxLength="9" Placeholder="Digite o CEP" PlaceholderColor="#737272" TextColor="black" Margin="0,30,0,30"/>
+                <Button Margin="0,10,0,0" Text="Consultar"
+                        Clicked="MetodoPesquisaCEP"
+                        BackgroundColor="pink"
+                        TextColor="White" />
+            </StackLayout>
+        </ScrollView>
+
+        <ScrollView Grid.Row="2">
+            <StackLayout Orientation="Vertical"  Padding="30,24,30,24" Spacing="10">
+                <Label Text="CEP" FontSize="14" TextColor="#737272" />
+                <Label x:Name="lbl_cep" Margin="0,0,0,10" FontSize="18" TextColor="black" />
+                <Label Text="Logradouro" FontSize="14" TextColor="#737272" />
+                <Label x:Name="lbl_logradouro" Margin="0,0,0,10" FontSize="18" TextColor="black" />
+                <Label Text="Complemento" FontSize="14" TextColor="#737272" />
+                <Label x:Name="lbl_complemento" Margin="0,0,0,10" FontSize="18" TextColor="black" />
+                <Label Text="Bairro" FontSize="14" TextColor="#737272" />
+                <Label x:Name="lbl_bairro" Margin="0,0,0,10" FontSize="18" TextColor="black" />
+                <Label Text="Cidade" FontSize="14" TextColor="#737272" />
+                <Label x:Name="lbl_localidade" Margin="0,0,0,10" FontSize="18" TextColor="black" />
+                <Label Text="UF" FontSize="14" TextColor="#737272" />
+                <Label x:Name="lbl_uf" Margin="0,0,0,10" FontSize="18" TextColor="black" />
+                <Label Text="IBGE" FontSize="14" TextColor="#737272" />
+                <Label x:Name="lbl_ibge" Margin="0,0,0,10" FontSize="18" TextColor="black" />
+                <Label Text="GIA" FontSize="14" TextColor="#737272" />
+                <Label x:Name="lbl_gia" Margin="0,0,0,10" FontSize="18" TextColor="black" />
+                <Label Text="DDD" FontSize="14" TextColor="#737272" />
+                <Label x:Name="lbl_ddd" Margin="0,0,0,10" FontSize="18" TextColor="black" />
+                <Label Text="Siafi" FontSize="14" TextColor="#737272" />
+                <Label x:Name="lbl_siafi" Margin="0,0,0,10" FontSize="18" TextColor="black" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
